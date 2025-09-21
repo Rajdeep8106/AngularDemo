@@ -1,0 +1,41 @@
+<div>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="form-group">
+      <label for="firstName">FirstName:</label>
+      <input type="text" id="firstname" [(ngModel)]="userObj.firstName" name="firstName" #fname="ngModel" required minlength="3"/>
+    </div>
+    <div *ngIf="fname.invalid && fname.touched">
+      <span *ngIf="fname.errors?.['required']">FirstName is Required</span>
+      <span *ngIf="fname.errors?.['minlength']">FirstName must be 3 Characters</span>
+    </div>
+
+    <div>
+      <label for="lastName">LastName:</label>
+      <input type="text" id="lastname" [(ngModel)]="userObj.lastName" name="lastName" #lname="ngModel" required minlength="3"/>
+    </div>
+    <div *ngIf="lname.invalid && lname.touched">
+      <span *ngIf="lname.errors?.['required']">LastName is Required</span>
+      <span *ngIf="lname.errors?.['minlength']">LastName must be 3 Characters</span>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" [(ngModel)]="userObj.email" name="email" #email="ngModel" required minlength="3"/>
+    </div>
+    <div *ngIf="email.invalid && email.touched">
+      <span *ngIf="email.errors?.['required']">Email is Required</span>
+      <span *ngIf="email.errors?.['minlength']">Email must be 3 Characters</span>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="text" id="password" [(ngModel)]="userObj.password" name="password" #pwd="ngModel" required minlength="3"/>
+    </div>
+    <div *ngIf="pwd.invalid && pwd.touched">
+      <span *ngIf="pwd.errors?.['required']">Password is Required</span>
+      <span *ngIf="pwd.errors?.['minlength']">Password must be 3 Characters</span>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+</div>

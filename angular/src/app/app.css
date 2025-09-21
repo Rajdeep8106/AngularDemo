@@ -1,0 +1,30 @@
+nav {
+  background-color: #1e293b; /* dark blue-gray */
+  padding: 12px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+}
+
+nav a {
+  color: #f8fafc; /* light text */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #334155; /* slightly lighter hover */
+  color: #38bdf8; /* cyan highlight */
+}
+
+nav a.active {
+  background-color: #38bdf8; /* active link */
+  color: #1e293b;
+  font-weight: 600;
+}

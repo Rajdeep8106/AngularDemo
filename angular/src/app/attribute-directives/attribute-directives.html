@@ -1,0 +1,6 @@
+<p [ngClass]="{
+       'active':isActive,
+       'inActive':!isActive}">
+  This text changes style dynamically
+</p>
+<p [ngClass]="isDisabled?'disabled':'enabled'">Disabled</p>

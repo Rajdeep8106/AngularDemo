@@ -1,0 +1,33 @@
+<div>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <!-- First Name -->
+    <div>
+      <label for="fname">FirstName:</label>
+      <input type="text" id="fname" name="fname" formControlName="firstName"/>
+
+      <div *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched">
+        <span *ngIf="userForm.get('firstName')?.errors?.['required']">
+          First Name is required
+        </span>
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div>
+      <label for="lname">LastName:</label>
+      <input type="text" id="lname" name="lname" formControlName="lastName"/>
+
+      <div *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched">
+        <span *ngIf="userForm.get('lastName')?.errors?.['required']">
+          Last Name is required
+        </span>
+        <span *ngIf="userForm.get('lastName')?.errors?.['minlength']">
+          Last Name must be at least 3 characters
+        </span>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+</div>

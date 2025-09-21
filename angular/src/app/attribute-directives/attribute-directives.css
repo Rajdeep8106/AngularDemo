@@ -1,0 +1,16 @@
+.active{
+  color:green;
+  font-size:50px
+}
+.inActive{
+  color:red;
+  font-size:50px;
+}
+.disabled{
+  color:green;
+  font-size:50px;
+}
+.enabled{
+  color:red;
+  font-size:50px;
+}

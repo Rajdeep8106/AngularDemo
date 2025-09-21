@@ -1,0 +1,18 @@
+<div>
+  <button (click)="getData()">Load Posts</button>
+</div>
+<table>
+ <thead>
+   <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+ </thead>
+  <tr *ngFor="let item of userList">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.body}}</td>
+  </tr>
+</table>
+<button (click)="getData(1)">Get Post 1</button>
